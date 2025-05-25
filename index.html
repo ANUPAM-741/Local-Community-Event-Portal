@@ -1,667 +1,1130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Community Event Portal</title>
-
-    <!-- Exercise 3: Internal CSS for Welcome Banner -->
+    <!-- CSS3 Task 5: Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-      }
-
-      /* Exercise 3: Welcome Banner Styling */
-      #welcomeBanner {
-        background-color: blue;
-        color: white;
-        padding: 20px;
-        text-align: center;
-        margin-bottom: 20px;
-      }
-
-      /* Exercise 3: Highlight Class */
-      .highlight {
-        background-color: yellow;
-        padding: 5px;
-        font-weight: bold;
-      }
-
-      /* Exercise 4: Image Gallery Styling */
-      .event-image {
-        border: 3px solid #333;
-        width: 150px;
-        height: 100px;
-        object-fit: cover;
-      }
-
-      /* Exercise 5: Form Styling */
-      .registration-form {
-        max-width: 600px;
-        margin: 20px auto;
-        padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-      }
-
-      .form-group {
-        margin-bottom: 15px;
-      }
-
-      .form-group label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-      }
-
-      .form-group input,
-      .form-group select,
-      .form-group textarea {
-        width: 100%;
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-      }
-
-      .submit-btn {
-        background-color: #007bff;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-
-      .submit-btn:hover {
-        background-color: #0056b3;
-      }
-
-      /* Exercise 4: Table Styling */
-      .event-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 20px 0;
-      }
-
-      .event-table td {
-        padding: 10px;
-        text-align: center;
-        border: 1px solid #ddd;
-      }
-
-      /* Navigation Styling */
-      nav {
-        background-color: #333;
-        padding: 10px;
-      }
-
-      nav a {
-        color: white;
-        text-decoration: none;
-        margin: 0 15px;
-        padding: 5px 10px;
-      }
-
-      nav a:hover {
-        background-color: #555;
-        border-radius: 3px;
-      }
-
-      section {
-        margin: 20px;
-        padding: 20px;
-      }
-
-      footer {
-        background-color: #333;
-        color: white;
-        text-align: center;
-        padding: 20px;
-        margin-top: 40px;
-      }
-
-      /* Character counter styling */
-      .char-counter {
-        font-size: 12px;
-        color: #666;
-        text-align: right;
-      }
-
-      /* Enlarged image styling */
-      .enlarged {
-        transform: scale(1.5);
-        transition: transform 0.3s ease;
-        z-index: 1000;
-        position: relative;
-      }
-
-      .coordinates {
-        background-color: #f0f0f0;
-        padding: 10px;
-        border-radius: 5px;
-        margin: 10px 0;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- EXERCISE 1: HTML5 Base Template -->
-    <!-- This entire document represents Exercise 1 with proper DOCTYPE, lang, charset -->
-
-    <!-- EXERCISE 2: Navigation and Linking -->
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#events">Events</a>
-      <a href="#contact">Contact</a>
-      <a href="help.html" target="_blank">Help</a>
-    </nav>
-
-    <!-- EXERCISE 3: Welcome Message with Styling and ID/Class -->
-    <div id="welcomeBanner">
-      <h1>Welcome to Community Event Portal</h1>
-      <p>Your gateway to local community events and services</p>
-      <span style="color: red; font-weight: bold"
-        >Special Offer: 20% off early bird registration!</span
-      >
-    </div>
-
-    <!-- Main Content Area -->
-    <main>
-      <!-- EXERCISE 2: Home Section -->
-      <section id="home">
-        <h2>Home</h2>
-        <p>
-          Welcome to our
-          <span class="highlight">Local Community Event Portal</span>. Here you
-          can register for events, check locations, and access basic city
-          services.
-        </p>
-        <p class="highlight">Stay connected with your community!</p>
-      </section>
-
-      <!-- EXERCISE 4: Image Gallery for Community Events -->
-      <section id="events">
-        <h2>Community Events Gallery</h2>
-        <table class="event-table">
-          <caption>
-            <strong>Past Community Events</strong>
-          </caption>
-          <tr>
-            <td>
-              <img
-                src="https://picsum.photos/150/100?random=1"
-                alt="Summer Festival"
-                title="Annual Summer Festival"
-                class="event-image"
-                ondblclick="enlargeImage(this)"
-              />
-              <br />Summer Festival
-            </td>
-            <td>
-              <img
-                src="https://picsum.photos/150/100?random=2"
-                alt="Winter Market"
-                title="Holiday Winter Market"
-                class="event-image"
-                ondblclick="enlargeImage(this)"
-              />
-              <br />Winter Market
-            </td>
-            <td>
-              <img
-                src="https://picsum.photos/150/100?random=3"
-                alt="Community Cleanup"
-                title="Spring Community Cleanup"
-                class="event-image"
-                ondblclick="enlargeImage(this)"
-              />
-              <br />Community Cleanup
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <img
-                src="https://picsum.photos/150/100?random=4"
-                alt="Food Drive"
-                title="Annual Food Drive"
-                class="event-image"
-                ondblclick="enlargeImage(this)"
-              />
-              <br />Food Drive
-            </td>
-            <td>
-              <img
-                src="https://picsum.photos/150/100?random=5"
-                alt="Music Concert"
-                title="Outdoor Music Concert"
-                class="event-image"
-                ondblclick="enlargeImage(this)"
-              />
-              <br />Music Concert
-            </td>
-            <td>
-              <img
-                src="https://picsum.photos/150/100?random=6"
-                alt="Sports Day"
-                title="Community Sports Day"
-                class="event-image"
-                ondblclick="enlargeImage(this)"
-              />
-              <br />Sports Day
-            </td>
-          </tr>
-        </table>
-      </section>
-
-      <!-- EXERCISE 5: Event Registration Form -->
-      <section id="registration">
-        <h2>Event Registration</h2>
-        <form
-          class="registration-form"
-          onsubmit="return handleFormSubmit(event)"
-        >
-          <div class="form-group">
-            <label for="name">Full Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Enter your full name"
-              required
-              autofocus
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="your.email@example.com"
-              required
-            />
-          </div>
-
-          <!-- EXERCISE 6: Phone field with onblur validation -->
-          <div class="form-group">
-            <label for="phone">Phone Number:</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="(555) 123-4567"
-              onblur="validatePhone(this)"
-            />
-            <div id="phoneError" style="color: red; font-size: 12px"></div>
-          </div>
-
-          <div class="form-group">
-            <label for="eventDate">Event Date:</label>
-            <input type="date" id="eventDate" name="eventDate" required />
-          </div>
-
-          <!-- EXERCISE 6: Dropdown with onchange event -->
-          <div class="form-group">
-            <label for="eventType">Event Type:</label>
-            <select
-              id="eventType"
-              name="eventType"
-              onchange="showEventFee(this)"
-              required
-            >
-              <option value="">Select an event type</option>
-              <option value="festival" data-fee="25">Festival ($25)</option>
-              <option value="workshop" data-fee="15">Workshop ($15)</option>
-              <option value="sports" data-fee="10">Sports Event ($10)</option>
-              <option value="concert" data-fee="30">Concert ($30)</option>
-              <option value="cleanup" data-fee="0">
-                Community Cleanup (Free)
-              </option>
-            </select>
-            <div
-              id="eventFee"
-              style="font-weight: bold; color: green; margin-top: 5px"
-            ></div>
-          </div>
-
-          <!-- EXERCISE 6: Textarea with character counting -->
-          <div class="form-group">
-            <label for="message">Additional Message:</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              placeholder="Any special requirements or comments..."
-              onkeyup="countCharacters(this)"
-            ></textarea>
-            <div id="charCount" class="char-counter">0 characters</div>
-          </div>
-
-          <!-- EXERCISE 6: Submit button with onclick -->
-          <button type="submit" class="submit-btn" onclick="showConfirmation()">
-            Register for Event
-          </button>
-
-          <!-- EXERCISE 5: Output element for confirmation -->
-          <output
-            id="confirmationOutput"
-            style="
-              display: block;
-              margin-top: 15px;
-              font-weight: bold;
-              color: green;
-            "
-          ></output>
-        </form>
-      </section>
-
-      <!-- EXERCISE 7: Video Invite with Media Events -->
-      <section id="video">
-        <div style="text-align: center">
-          <h2>Event Promotional Video</h2>
-          <video
-            id="promoVideo"
-            width="400"
-            height="300"
-            controls
-            oncanplay="videoReady()"
-          >
-            <source
-              src="https://www.w3schools.com/html/mov_bbb.mp4"
-              type="video/mp4"
-            />
-            <source
-              src="https://www.w3schools.com/html/mov_bbb.ogg"
-              type="video/ogg"
-            />
-            Your browser does not support the video tag.
-          </video>
-
-          <div
-            id="videoStatus"
-            style="margin-top: 10px; font-style: italic"
-          ></div>
-        </div>
-      </section>
-
-      <!-- EXERCISE 8: User Preferences with localStorage -->
-      <section id="preferences">
-        <h2>User Preferences</h2>
-        <div class="form-group">
-          <label for="preferredEvent">Preferred Event Type:</label>
-          <select id="preferredEvent" onchange="savePreference(this.value)">
-            <option value="">Select preference</option>
-            <option value="festival">Festival</option>
-            <option value="workshop">Workshop</option>
-            <option value="sports">Sports Event</option>
-            <option value="concert">Concert</option>
-            <option value="cleanup">Community Cleanup</option>
-          </select>
-        </div>
-        <button
-          onclick="clearPreferences()"
-          style="margin-top: 10px; padding: 8px 16px"
-        >
-          Clear All Preferences
-        </button>
-        <div
-          id="preferenceStatus"
-          style="margin-top: 10px; font-style: italic"
-        ></div>
-      </section>
-
-      <!-- EXERCISE 9: Geolocation for Event Mapping -->
-      <section id="location">
-        <h2>Find Nearby Events</h2>
-        <button
-          onclick="findNearbyEvents()"
-          style="
-            padding: 10px 20px;
-            background-color: #28a745;
+        /* CSS3 Task 1: Internal CSS for body background */
+        /* CSS3 Task 2: CSS Comments and proper structure */
+        
+        /* Universal reset - CSS3 Task 3 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Body and main layout styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        /* Header styles - CSS3 Task 3: ID selector */
+        #mainHeader {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        /* Navigation styles - CSS3 Task 6: Link styling */
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style-type: none; /* CSS3 Task 6: Remove bullets */
+            gap: 2rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+        
+        /* CSS3 Task 6: Pseudo-class styling for links */
+        nav a:hover {
+            background: #667eea;
             color: white;
-            border: none;
+            transform: translateY(-2px);
+        }
+        
+        nav a:active {
+            transform: translateY(0);
+        }
+        
+        /* Main container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* Welcome banner - HTML5 Task 3 */
+        #welcomeBanner {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* CSS3 Task 3: Element selectors for headings */
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #333;
+        }
+        
+        /* CSS3 Task 3: Grouping selector */
+        h3, p {
+            margin-bottom: 1rem;
+        }
+        
+        /* Highlight class - HTML5 Task 3 */
+        .highlight {
+            background: #ffd700;
+            color: #333;
+            padding: 0.2rem 0.5rem;
             border-radius: 4px;
-          "
-        >
-          Find Nearby Events
-        </button>
-        <div id="locationResult" class="coordinates"></div>
-      </section>
+            font-weight: bold;
+        }
+        
+        /* CSS3 Task 3: Class selector for event cards */
+        .eventCard {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        /* CSS3 Task 8: Box model properties */
+        .eventCard:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-color: #667eea;
+        }
+        
+        /* Event grid */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        /* CSS3 Task 7: Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        /* CSS3 Task 7: Zebra striping */
+        tr:nth-child(even) {
+            background: #f8f9ff;
+        }
+        
+        /* Form styles */
+        form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        
+        /* CSS3 Task 8: Outline for focus */
+        input:focus, select:focus, textarea:focus {
+            outline: 3px solid rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+        
+        /* Button styles */
+        button, .btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        button:hover, .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        /* CSS3 Task 9: Multi-column layout */
+        .news-article {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            column-count: 2;
+            column-gap: 30px;
+            column-rule: 1px solid #ddd;
+            margin-bottom: 2rem;
+        }
+        
+        /* Video container */
+        .video-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        video {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+        
+        /* Image gallery */
+        .image-gallery {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Loading spinner */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Error and success messages */
+        .message {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        /* CSS3 Task 10: Media queries for responsive design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .news-article {
+                column-count: 1;
+            }
+            
+            table {
+                font-size: 0.9rem;
+            }
+            
+            th, td {
+                padding: 0.5rem;
+            }
+        }
+        
+        /* CSS3 Task 8: Visibility comparison */
+        .hidden-visibility {
+            visibility: hidden;
+        }
+        
+        .hidden-display {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- HTML5 Task 1: Comments for sections -->
+    <!-- Navigation -->
+    <header id="mainHeader">
+        <nav>
+            <div class="logo">
+                <h3>Community Portal</h3>
+            </div>
+            <!-- HTML5 Task 2: Navigation with anchor links -->
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="help.html" target="_blank">Help</a></li>
+            </ul>
+        </nav>
+    </header>
 
-      <!-- EXERCISE 2: Contact Section -->
-      <section id="contact">
-        <h2>Contact Us</h2>
-        <p>For questions about events or technical support:</p>
-        <ul>
-          <li>Email: events@community.gov</li>
-          <li>Phone: (555) 123-CITY</li>
-          <li>Address: 123 Main Street, Your City</li>
-        </ul>
-      </section>
+    <!-- Main -->
+    <main class="container">
+        <!-- HTML5 Task 3: Welcome banner with ID and inline styling -->
+        <div id="welcomeBanner">
+            <h1>Welcome to Our Community Portal</h1>
+            <p>Discover amazing local events and connect with your community!</p>
+            <!-- CSS3 Task 1: Inline style -->
+            <span style="color: #ffd700; font-weight: bold; font-size: 1.2em;">
+                Special Offer: <span class="highlight">Early bird discount available!</span>
+            </span>
+        </div>
+
+        <!-- Events Section -->
+        <section id="events">
+            <h2>Upcoming Events</h2>
+            
+            <!-- Event filters -->
+            <div style="margin-bottom: 2rem; text-align: center;">
+                <select id="categoryFilter" onchange="filterEvents()">
+                    <option value="">All Categories</option>
+                    <option value="music">Music</option>
+                    <option value="workshop">Workshop</option>
+                    <option value="sports">Sports</option>
+                    <option value="community">Community</option>
+                </select>
+                
+                <input type="text" id="searchInput" placeholder="Search events..." onkeydown="handleSearch(event)" style="margin-left: 1rem; width: 300px;">
+                
+                <button onclick="findNearbyEvents()" style="margin-left: 1rem;">Find Nearby Events</button>
+                <button onclick="clearPreferences()" style="margin-left: 1rem;">Clear Preferences</button>
+            </div>
+
+            <!-- Loading spinner -->
+            <div class="loading" id="loadingSpinner">
+                <div class="spinner"></div>
+                <p>Loading events...</p>
+            </div>
+
+            <!-- Events grid -->
+            <div class="events-grid" id="eventsContainer">
+                <!-- Events will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- HTML5 Task 4: Image Gallery -->
+        <section id="gallery">
+            <h2>Past Event Gallery</h2>
+            <div class="image-gallery">
+                <table>
+                    <caption>Community Event Memories</caption>
+                    <tr>
+                        <td><img src="https://picsum.photos/300/200?random=1" alt="Summer Festival" title="Summer Music Festival" class="gallery-img" ondblclick="enlargeImage(this)"></td>
+                        <td><img src="https://picsum.photos/300/200?random=2" alt="Art Workshop" title="Community Art Workshop" class="gallery-img" ondblclick="enlargeImage(this)"></td>
+                        <td><img src="https://picsum.photos/300/200?random=3" alt="Sports Day" title="Annual Sports Day" class="gallery-img" ondblclick="enlargeImage(this)"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://picsum.photos/300/200?random=4" alt="Food Festival" title="Local Food Festival" class="gallery-img" ondblclick="enlargeImage(this)"></td>
+                        <td><img src="https://picsum.photos/300/200?random=5" alt="Book Club" title="Monthly Book Club" class="gallery-img" ondblclick="enlargeImage(this)"></td>
+                        <td><img src="https://picsum.photos/300/200?random=6" alt="Charity Run" title="Charity Marathon" class="gallery-img" ondblclick="enlargeImage(this)"></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- HTML5 Task 7: Video section -->
+        <section id="video">
+            <h2>Event Promo Video</h2>
+            <div class="video-container">
+                <video controls oncanplay="videoReady()">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div id="videoMessage" style="margin-top: 1rem; color: #667eea; font-weight: bold;"></div>
+            </div>
+        </section>
+
+        <!-- HTML5 Task 5: Registration Form -->
+        <section id="contact">
+            <h2>Event Registration</h2>
+            
+            <div class="message success" id="successMessage"></div>
+            <div class="message error" id="errorMessage"></div>
+            
+            <form id="registrationForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required autofocus placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" onblur="validatePhone()">
+                </div>
+                
+                <div class="form-group">
+                    <label for="eventDate">Preferred Event Date:</label>
+                    <input type="date" id="eventDate" name="eventDate">
+                </div>
+                
+                <div class="form-group">
+                    <label for="eventType">Event Type:</label>
+                    <select id="eventType" name="eventType" onchange="showEventFee()">
+                        <option value="">Select an event type</option>
+                        <option value="music" data-fee="25">Music Concert - $25</option>
+                        <option value="workshop" data-fee="15">Workshop - $15</option>
+                        <option value="sports" data-fee="20">Sports Event - $20</option>
+                        <option value="community" data-fee="10">Community Meeting - $10</option>
+                    </select>
+                    <div id="eventFee" style="margin-top: 0.5rem; font-weight: bold; color: #667eea;"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Additional Message:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Any special requirements or questions?" onkeyup="countCharacters()"></textarea>
+                    <div id="charCount" style="text-align: right; color: #666; font-size: 0.9rem;">0 characters</div>
+                </div>
+                
+                <button type="submit" onclick="showConfirmation()">Register for Event</button>
+                
+                <!-- HTML5 Task 5: Output element -->
+                <output id="confirmationOutput" style="display: block; margin-top: 1rem; font-weight: bold; color: #667eea;"></output>
+            </form>
+        </section>
+
+        <!-- Event Admin Table -->
+        <section id="admin">
+            <h2>Event Administration</h2>
+            <table id="adminTable">
+                <thead>
+                    <tr>
+                        <th>Event Name</th>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Available Seats</th>
+                        <th>Registered</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="adminTableBody">
+                    <!-- Populated by JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- CSS3 Task 9: Multi-column news section -->
+        <section id="news">
+            <h2>Community Bulletin</h2>
+            <div class="news-article">
+                <h3>Latest Community News</h3>
+                <p>The annual summer festival planning committee is pleased to announce the lineup for this year's event. We have secured amazing local bands, food vendors, and activity booths for all ages.</p>
+                
+                <p>The new community center construction is ahead of schedule and should be completed by the end of the month. This state-of-the-art facility will include a gymnasium, meeting rooms, and a library branch.</p>
+                
+                <p>Don't forget to register for the monthly town hall meeting where important community decisions are made. Your voice matters and we encourage all residents to participate in local governance.</p>
+                
+                <p>The community garden project has been a huge success with over 50 families participating. Fresh vegetables and herbs are being grown sustainably, and the surplus is being donated to local food banks.</p>
+                
+                <p>New safety measures have been implemented in the downtown area including improved lighting and additional security patrols. The city council takes resident safety seriously and continues to invest in protective measures.</p>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer>
-      <p>&copy; 2024 Local Community Event Portal. All rights reserved.</p>
-      <p>Serving our community with pride since 2020</p>
+        <p>&copy; 2024 Local Community Event Portal. All rights reserved.</p>
+        <p>Contact us: community@localportal.org | (555) 123-4567</p>
     </footer>
 
-    <!-- JavaScript for all interactive features -->
     <script>
-      // EXERCISE 8: Load saved preferences on page load
-      window.onload = function () {
-        loadSavedPreferences();
-        console.log("Page loaded - all systems ready for debugging!");
-      };
-
-      // EXERCISE 7: onbeforeunload warning
-      window.onbeforeunload = function (e) {
-        const form = document.querySelector(".registration-form");
-        const inputs = form.querySelectorAll("input, select, textarea");
-        let hasContent = false;
-
-        inputs.forEach((input) => {
-          if (input.value.trim() !== "") {
-            hasContent = true;
-          }
-        });
-
-        if (hasContent) {
-          const confirmationMessage =
-            "You have unsaved form data. Are you sure you want to leave?";
-          e.returnValue = confirmationMessage;
-          return confirmationMessage;
+        // JavaScript Task 1: Basic setup and console.log
+        console.log("Welcome to the Community Portal");
+        
+        // JavaScript Task 2: Data types and variables
+        const eventPortalName = "Local Community Portal";
+        const portalEstablished = "2024";
+        let totalRegistrations = 0;
+        
+        // JavaScript Task 5: Event constructor and objects
+        class Event {
+            constructor(name, date, category, seats, location, fee = 0) {
+                this.name = name;
+                this.date = date;
+                this.category = category;
+                this.seats = seats;
+                this.registeredUsers = [];
+                this.location = location;
+                this.fee = fee;
+            }
+            
+            // Method on prototype
+            checkAvailability() {
+                return this.seats > this.registeredUsers.length;
+            }
+            
+            registerUser(user) {
+                if (this.checkAvailability()) {
+                    this.registeredUsers.push(user);
+                    totalRegistrations++;
+                    return true;
+                }
+                return false;
+            }
         }
-      };
-
-      // EXERCISE 6: Phone validation on blur
-      function validatePhone(input) {
-        const phonePattern = /^\(\d{3}\)\s\d{3}-\d{4}$/;
-        const errorDiv = document.getElementById("phoneError");
-
-        if (input.value && !phonePattern.test(input.value)) {
-          errorDiv.textContent = "Please use format: (555) 123-4567";
-          input.style.borderColor = "red";
-        } else {
-          errorDiv.textContent = "";
-          input.style.borderColor = "#ccc";
+        
+        // JavaScript Task 6: Array of events
+        let communityEvents = [
+            new Event("Summer Music Festival", "2024-07-15", "music", 500, "Central Park", 25),
+            new Event("JavaScript Workshop", "2024-06-20", "workshop", 30, "Tech Center", 15),
+            new Event("Basketball Tournament", "2024-06-25", "sports", 100, "Sports Complex", 20),
+            new Event("Town Hall Meeting", "2024-06-10", "community", 200, "City Hall", 0),
+            new Event("Art & Craft Fair", "2024-07-01", "workshop", 50, "Community Center", 15),
+            new Event("Jazz Night", "2024-06-30", "music", 80, "Downtown Cafe", 25)
+        ];
+        
+        // JavaScript Task 4: Closure for tracking registrations
+        const createRegistrationTracker = () => {
+            let categoryTotals = {};
+            
+            return {
+                trackRegistration: (category) => {
+                    categoryTotals[category] = (categoryTotals[category] || 0) + 1;
+                    return categoryTotals[category];
+                },
+                getTotals: () => ({ ...categoryTotals })
+            };
+        };
+        
+        const registrationTracker = createRegistrationTracker();
+        
+        // JavaScript Task 3: Functions with error handling
+        function addEvent(name, date, category, seats, location, fee) {
+            try {
+                const newEvent = new Event(name, date, category, seats, location, fee);
+                communityEvents.push(newEvent);
+                displayEvents();
+                updateAdminTable();
+                console.log(`Event "${name}" added successfully`);
+            } catch (error) {
+                console.error("Error adding event:", error);
+                showMessage("Failed to add event", "error");
+            }
         }
-        console.log("Phone validation triggered:", input.value);
-      }
-
-      // EXERCISE 6: Show event fee on change
-      function showEventFee(select) {
-        const feeDiv = document.getElementById("eventFee");
-        const selectedOption = select.options[select.selectedIndex];
-
-        if (selectedOption.dataset.fee !== undefined) {
-          const fee = selectedOption.dataset.fee;
-          feeDiv.textContent =
-            fee === "0" ? "This event is FREE!" : `Registration fee: $${fee}`;
-        } else {
-          feeDiv.textContent = "";
+        
+        function registerUser(eventName, userName, userEmail) {
+            try {
+                const event = communityEvents.find(e => e.name === eventName);
+                if (!event) {
+                    throw new Error("Event not found");
+                }
+                
+                if (event.registerUser({ name: userName, email: userEmail })) {
+                    registrationTracker.trackRegistration(event.category);
+                    showMessage(`Successfully registered for ${eventName}!`, "success");
+                    updateAdminTable();
+                    return true;
+                } else {
+                    throw new Error("Event is full");
+                }
+            } catch (error) {
+                console.error("Registration error:", error);
+                showMessage(error.message, "error");
+                return false;
+            }
         }
-        console.log("Event type changed:", select.value);
-      }
-
-      // EXERCISE 6: Character counting for textarea
-      function countCharacters(textarea) {
-        const count = textarea.value.length;
-        const counter = document.getElementById("charCount");
-        counter.textContent = `${count} characters`;
-
-        if (count > 200) {
-          counter.style.color = "red";
-        } else {
-          counter.style.color = "#666";
+        
+        // JavaScript Task 4: Higher-order function for filtering
+        function filterEventsByCategory(category, callback) {
+            const filtered = communityEvents.filter(event => 
+                category === "" || event.category === category
+            );
+            if (callback) callback(filtered);
+            return filtered;
         }
-        console.log("Character count:", count);
-      }
-
-      // EXERCISE 6: Show confirmation on click
-      function showConfirmation() {
-        console.log("Submit button clicked - showing confirmation");
-        // This runs before form submission
-      }
-
-      // EXERCISE 6: Double-click to enlarge image
-      function enlargeImage(img) {
-        console.log("Image double-clicked:", img.alt);
-        img.classList.toggle("enlarged");
-
-        // Remove enlargement after 3 seconds
-        if (img.classList.contains("enlarged")) {
-          setTimeout(() => {
-            img.classList.remove("enlarged");
-          }, 3000);
-        }
-      }
-
-      // EXERCISE 5: Form submission handler
-      function handleFormSubmit(event) {
-        event.preventDefault();
-        const output = document.getElementById("confirmationOutput");
-        const name = document.getElementById("name").value;
-        const eventType = document.getElementById("eventType").value;
-
-        output.textContent = `Thank you, ${name}! Your registration for ${eventType} has been submitted successfully.`;
-        console.log("Form submitted successfully");
-        return false;
-      }
-
-      // EXERCISE 7: Video ready event
-      function videoReady() {
-        const status = document.getElementById("videoStatus");
-        status.textContent = "✓ Video ready to play!";
-        status.style.color = "green";
-        console.log("Video is ready to play");
-      }
-
-      // EXERCISE 8: Save user preference
-      function savePreference(value) {
-        if (value) {
-          localStorage.setItem("preferredEventType", value);
-          sessionStorage.setItem("currentSession", new Date().toISOString());
-          document.getElementById(
-            "preferenceStatus"
-          ).textContent = `Preference saved: ${value}`;
-          console.log("Preference saved to localStorage:", value);
-        }
-      }
-
-      // EXERCISE 8: Load saved preferences
-      function loadSavedPreferences() {
-        const saved = localStorage.getItem("preferredEventType");
-        if (saved) {
-          document.getElementById("preferredEvent").value = saved;
-          document.getElementById("eventType").value = saved;
-          document.getElementById(
-            "preferenceStatus"
-          ).textContent = `Loaded preference: ${saved}`;
-          console.log("Loaded saved preference:", saved);
-        }
-      }
-
-      // EXERCISE 8: Clear all preferences
-      function clearPreferences() {
-        localStorage.removeItem("preferredEventType");
-        sessionStorage.clear();
-        document.getElementById("preferredEvent").value = "";
-        document.getElementById("eventType").value = "";
-        document.getElementById("preferenceStatus").textContent =
-          "All preferences cleared";
-        console.log("All preferences cleared");
-      }
-
-      // EXERCISE 9: Geolocation functionality
-      function findNearbyEvents() {
-        const resultDiv = document.getElementById("locationResult");
-        resultDiv.innerHTML = "<p>Getting your location...</p>";
-
-        if ("geolocation" in navigator) {
-          const options = {
-            enableHighAccuracy: true,
-            timeout: 10000,
-            maximumAge: 60000,
-          };
-
-          navigator.geolocation.getCurrentPosition(
-            function (position) {
-              const lat = position.coords.latitude;
-              const lon = position.coords.longitude;
-              const accuracy = position.coords.accuracy;
-
-              resultDiv.innerHTML = `
-                            <h4>Your Location:</h4>
-                            <p><strong>Latitude:</strong> ${lat.toFixed(6)}</p>
-                            <p><strong>Longitude:</strong> ${lon.toFixed(6)}</p>
-                            <p><strong>Accuracy:</strong> ${accuracy} meters</p>
-                            <p><em>Nearby events: Summer Festival (2.3 miles), Community Workshop (0.8 miles)</em></p>
+        
+        // JavaScript Task 7: DOM Manipulation
+        function displayEvents(eventsToShow = communityEvents) {
+            const container = document.getElementById('eventsContainer');
+            container.innerHTML = '';
+            
+            // JavaScript Task 3: Loop through events with error handling
+            try {
+                eventsToShow.forEach(event => {
+                    // JavaScript Task 3: Only show valid events
+                    const eventDate = new Date(event.date);
+                    const today = new Date();
+                    
+                    if (eventDate >= today && event.checkAvailability()) {
+                        const eventCard = document.createElement('div');
+                        eventCard.className = 'eventCard';
+                        
+                        // JavaScript Task 2: Template literals
+                        eventCard.innerHTML = `
+                            <h3>${event.name}</h3>
+                            <p><strong>Date:</strong> ${event.date}</p>
+                            <p><strong>Category:</strong> ${event.category}</p>
+                            <p><strong>Location:</strong> ${event.location}</p>
+                            <p><strong>Available Seats:</strong> ${event.seats - event.registeredUsers.length}</p>
+                            <p><strong>Fee:</strong> $${event.fee}</p>
+                            <button onclick="quickRegister('${event.name}')">Quick Register</button>
                         `;
-              console.log("Geolocation success:", lat, lon);
-            },
-            function (error) {
-              let errorMessage = "";
-              switch (error.code) {
-                case error.PERMISSION_DENIED:
-                  errorMessage = "Location access denied by user.";
-                  break;
-                case error.POSITION_UNAVAILABLE:
-                  errorMessage = "Location information unavailable.";
-                  break;
-                case error.TIMEOUT:
-                  errorMessage = "Location request timed out.";
-                  break;
-                default:
-                  errorMessage = "An unknown error occurred.";
-                  break;
-              }
-              resultDiv.innerHTML = `<p style="color: red;">Error: ${errorMessage}</p>`;
-              console.error("Geolocation error:", error);
-            },
-            options
-          );
-        } else {
-          resultDiv.innerHTML =
-            '<p style="color: red;">Geolocation is not supported by this browser.</p>';
-          console.error("Geolocation not supported");
+                        
+                        container.appendChild(eventCard);
+                    }
+                });
+            } catch (error) {
+                console.error("Error displaying events:", error);
+                showMessage("Error loading events", "error");
+            }
         }
-      }
-
-      // EXERCISE 10: Additional debugging helpers
-      console.log("Community Event Portal loaded - ready for debugging!");
-      console.log("Available functions for testing:", {
-        validatePhone: "validatePhone(inputElement)",
-        showEventFee: "showEventFee(selectElement)",
-        countCharacters: "countCharacters(textareaElement)",
-        enlargeImage: "enlargeImage(imgElement)",
-        findNearbyEvents: "findNearbyEvents()",
-        savePreference: "savePreference('eventType')",
-        clearPreferences: "clearPreferences()",
-      });
+        
+        // JavaScript Task 8: Event handling functions
+        function filterEvents() {
+            const category = document.getElementById('categoryFilter').value;
+            
+            // JavaScript Task 8: Save preference
+            if (typeof(Storage) !== "undefined") {
+                localStorage.setItem('preferredCategory', category);
+            }
+            
+            filterEventsByCategory(category, displayEvents);
+        }
+        
+        function handleSearch(event) {
+            // JavaScript Task 8: keydown event
+            if (event.key === 'Enter') {
+                const searchTerm = event.target.value.toLowerCase();
+                const filtered = communityEvents.filter(e => 
+                    e.name.toLowerCase().includes(searchTerm)
+                );
+                displayEvents(filtered);
+            }
+        }
+        
+        // HTML5 Task 6: Event handling functions
+        function validatePhone() {
+            const phone = document.getElementById('phone').value;
+            const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+            
+            if (phone && !phoneRegex.test(phone)) {
+                showMessage("Please enter a valid phone number", "error");
+            }
+        }
+        
+        function showEventFee() {
+            const select = document.getElementById('eventType');
+            const feeDiv = document.getElementById('eventFee');
+            const selectedOption = select.options[select.selectedIndex];
+            
+            if (selectedOption.dataset.fee) {
+                feeDiv.textContent = `Registration Fee: $${selectedOption.dataset.fee}`;
+            } else {
+                feeDiv.textContent = '';
+            }
+        }
+        
+        function countCharacters() {
+            const textarea = document.getElementById('message');
+            const counter = document.getElementById('charCount');
+            counter.textContent = `${textarea.value.length} characters`;
+        }
+        
+        function showConfirmation() {
+            const output = document.getElementById('confirmationOutput');
+            output.textContent = "Registration form submitted successfully!";
+        }
+        
+        function enlargeImage(img) {
+            // JavaScript Task 8: Double-click event
+            const originalWidth = img.style.width;
+            if (img.style.width === '150%') {
+                img.style.width = '100%';
+            } else {
+                img.style.width = '150%';
+            }
+        }
+        
+        // HTML5 Task 7: Video event
+        function videoReady() {
+            document.getElementById('videoMessage').textContent = "Video ready to play!";
+        }
+        
+        // HTML5 Task 9: Geolocation
+        function findNearbyEvents() {
+            if ("geolocation" in navigator) {
+                const options = {
+                    enableHighAccuracy: true,
+                    timeout: 5000,
+                    maximumAge: 0
+                };
+                
+                navigator.geolocation.getCurrentPosition(
+                    function(position) {
+                        const lat = position.coords.latitude;
+                        const lon = position.coords.longitude;
+                        showMessage(`Your location: ${lat.toFixed(4)}, ${lon.toFixed(4)}. Showing nearby events!`, "success");
+                        
+                        // Simulate showing nearby events
+                        displayEvents(communityEvents.slice(0, 3));
+                    },
+                    function(error) {
+                        console.error("Geolocation error:", error);
+                        showMessage("Unable to access location. Please check permissions.", "error");
+                    },
+                    options
+                );
+            } else {
+                showMessage("Geolocation is not supported by this browser.", "error");
+            }
+        }
+        
+        // HTML5 Task 8: Clear preferences
+        function clearPreferences() {
+            if (typeof(Storage) !== "undefined") {
+                localStorage.clear();
+                sessionStorage.clear();
+                showMessage("Preferences cleared successfully!", "success");
+                document.getElementById('categoryFilter').value = '';
+                displayEvents();
+            }
+        }
+        
+        // JavaScript Task 12: Form handling with AJAX simulation
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const userData = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                eventDate: formData.get('eventDate'),
+                eventType: formData.get('eventType'),
+                message: formData.get('message')
+            };
+            
+            // Show loading spinner
+            showLoading(true);
+            
+            try {
+                // JavaScript Task 9: Async/await with simulated API call
+                const response = await simulateApiCall(userData);
+                
+                if (response.success) {
+                    showMessage("Registration submitted successfully! You will receive a confirmation email.", "success");
+                    
+                    // Register user for the selected event
+                    if (userData.eventType) {
+                        const eventName = document.getElementById('eventType').options[document.getElementById('eventType').selectedIndex].text.split(' - ')[0];
+                        registerUser(eventName, userData.name, userData.email);
+                    }
+                    
+                    // Reset form
+                    event.target.reset();
+                    document.getElementById('charCount').textContent = '0 characters';
+                    document.getElementById('eventFee').textContent = '';
+                } else {
+                    throw new Error('Registration failed');
+                }
+            } catch (error) {
+                console.error("Form submission error:", error);
+                showMessage("Registration failed. Please try again.", "error");
+            } finally {
+                showLoading(false);
+            }
+        }
+        
+        // JavaScript Task 9: Promise-based API simulation
+        function simulateApiCall(data) {
+            return new Promise((resolve, reject) => {
+                // JavaScript Task 12: Simulate delayed response
+                setTimeout(() => {
+                    console.log("Submitting data:", data);
+                    
+                    // Simulate success/failure
+                    if (data.name && data.email) {
+                        resolve({ success: true, message: "Registration successful" });
+                    } else {
+                        reject(new Error("Invalid data"));
+                    }
+                }, 2000);
+            });
+        }
+        
+        // JavaScript Task 9: Fetch API alternative with .then()
+        function submitWithFetch(userData) {
+            // Note: This would normally be a real API endpoint
+            const mockApiUrl = 'https://jsonplaceholder.typicode.com/posts';
+            
+            fetch(mockApiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(userData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Fetch success:', data);
+                showMessage("Registration data sent successfully!", "success");
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+                showMessage("Network error occurred", "error");
+            });
+        }
+        
+        // Utility functions
+        function showMessage(message, type) {
+            const messageDiv = document.getElementById(type === 'success' ? 'successMessage' : 'errorMessage');
+            messageDiv.textContent = message;
+            messageDiv.style.display = 'block';
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
+        }
+        
+        function showLoading(show) {
+            document.getElementById('loadingSpinner').style.display = show ? 'block' : 'none';
+        }
+        
+        function quickRegister(eventName) {
+            const name = prompt("Enter your name:");
+            const email = prompt("Enter your email:");
+            
+            if (name && email) {
+                registerUser(eventName, name, email);
+            }
+        }
+        
+        // JavaScript Task 7: Update admin table
+        function updateAdminTable() {
+            const tbody = document.getElementById('adminTableBody');
+            tbody.innerHTML = '';
+            
+            communityEvents.forEach(event => {
+                const row = document.createElement('tr');
+                const availableSeats = event.seats - event.registeredUsers.length;
+                const status = availableSeats > 0 ? 'Open' : 'Full';
+                
+                row.innerHTML = `
+                    <td>${event.name}</td>
+                    <td>${event.date}</td>
+                    <td>${event.category}</td>
+                    <td>${availableSeats}</td>
+                    <td>${event.registeredUsers.length}</td>
+                    <td style="color: ${status === 'Open' ? 'green' : 'red'}">${status}</td>
+                `;
+                
+                tbody.appendChild(row);
+            });
+        }
+        
+        // JavaScript Task 10: Modern JavaScript features
+        const { log } = console; // Destructuring
+        
+        // Default parameters
+        function createEventCard(event, showFee = true) {
+            // Spread operator to clone
+            const eventCopy = { ...event };
+            
+            // Template with destructuring
+            const { name, date, category, location } = eventCopy;
+            
+            return `
+                <div class="eventCard">
+                    <h3>${name}</h3>
+                    <p>Date: ${date}</p>
+                    <p>Category: ${category}</p>
+                    <p>Location: ${location}</p>
+                    ${showFee ? `<p>Fee: ${eventCopy.fee}</p>` : ''}
+                </div>
+            `;
+        }
+        
+        // JavaScript Task 6: Array methods demonstration
+        function demonstrateArrayMethods() {
+            log("All events:", communityEvents);
+            
+            // Filter music events
+            const musicEvents = communityEvents.filter(event => event.category === 'music');
+            log("Music events:", musicEvents);
+            
+            // Map to create display names
+            const eventNames = communityEvents.map(event => `${event.category.toUpperCase()}: ${event.name}`);
+            log("Formatted event names:", eventNames);
+            
+            // Find specific event
+            const workshop = communityEvents.find(event => event.category === 'workshop');
+            log("First workshop:", workshop);
+            
+            // Reduce to get total capacity
+            const totalCapacity = communityEvents.reduce((sum, event) => sum + event.seats, 0);
+            log("Total event capacity:", totalCapacity);
+        }
+        
+        // Page initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            // JavaScript Task 1: Alert when page loads
+            alert("Welcome! Community Portal loaded successfully.");
+            
+            // Load saved preferences
+            if (typeof(Storage) !== "undefined") {
+                const savedCategory = localStorage.getItem('preferredCategory');
+                if (savedCategory) {
+                    document.getElementById('categoryFilter').value = savedCategory;
+                    filterEventsByCategory(savedCategory, displayEvents);
+                } else {
+                    displayEvents();
+                }
+            } else {
+                displayEvents();
+            }
+            
+            // Initialize admin table
+            updateAdminTable();
+            
+            // Demonstrate array methods in console
+            demonstrateArrayMethods();
+            
+            // JavaScript Task 5: Object methods demonstration
+            log("Event object keys:", Object.keys(communityEvents[0]));
+            log("Event object entries:", Object.entries(communityEvents[0]));
+            
+            // Show registration tracker totals
+            log("Registration totals by category:", registrationTracker.getTotals());
+        });
+        
+        // HTML5 Task 7: Before unload warning
+        window.addEventListener('beforeunload', function(event) {
+            const form = document.getElementById('registrationForm');
+            const formData = new FormData(form);
+            let hasData = false;
+            
+            for (let [key, value] of formData.entries()) {
+                if (value.trim() !== '') {
+                    hasData = true;
+                    break;
+                }
+            }
+            
+            if (hasData) {
+                const message = 'You have unsaved form data. Are you sure you want to leave?';
+                event.returnValue = message;
+                return message;
+            }
+        });
+        
+        // JavaScript Task 14: jQuery-like functionality (if jQuery were available)
+        // Note: This is just for demonstration - actual jQuery would need to be loaded
+        function jQueryStyleDemo() {
+            // This demonstrates what we could do with jQuery:
+            // $('#registerBtn').click(function() { ... });
+            // $('.eventCard').fadeIn();
+            // $('.eventCard').fadeOut();
+            
+            // Native JavaScript alternatives:
+            const registerButtons = document.querySelectorAll('button');
+            registerButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    console.log('Button clicked:', this.textContent);
+                });
+            });
+            
+            // Fade in effect with native JS
+            const eventCards = document.querySelectorAll('.eventCard');
+            eventCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transition = 'opacity 0.5s ease-in-out';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                }, 100);
+            });
+        }
+        
+        // Call jQuery demo
+        setTimeout(jQueryStyleDemo, 1000);
+        
+        // Additional utility functions for completeness
+        
+        // JavaScript Task 4: Closure example for event management
+        const eventManager = (function() {
+            let privateEventList = [...communityEvents];
+            
+            return {
+                getEvents: () => [...privateEventList],
+                addPrivateEvent: (event) => {
+                    privateEventList.push(event);
+                    return privateEventList.length;
+                },
+                getEventCount: () => privateEventList.length
+            };
+        })();
+        
+        // JavaScript Task 13: Debugging helpers
+        function debugEventSystem() {
+            console.group("Event System Debug Info");
+            console.log("Total events:", communityEvents.length);
+            console.log("Events by category:", 
+                communityEvents.reduce((acc, event) => {
+                    acc[event.category] = (acc[event.category] || 0) + 1;
+                    return acc;
+                }, {})
+            );
+            console.log("Total registrations:", totalRegistrations);
+            console.log("Registration tracker:", registrationTracker.getTotals());
+            console.groupEnd();
+        }
+        
+        // Add debug button for testing
+        function addDebugButton() {
+            const debugBtn = document.createElement('button');
+            debugBtn.textContent = 'Debug Info';
+            debugBtn.onclick = debugEventSystem;
+            debugBtn.style.position = 'fixed';
+            debugBtn.style.bottom = '20px';
+            debugBtn.style.right = '20px';
+            debugBtn.style.zIndex = '1000';
+            debugBtn.style.background = '#ff4444';
+            document.body.appendChild(debugBtn);
+        }
+        
+        // Add debug button after page loads
+        setTimeout(addDebugButton, 2000);
     </script>
-  </body>
+</body>
 </html>
